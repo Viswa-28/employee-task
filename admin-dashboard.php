@@ -28,7 +28,8 @@ $date = date("Y-m-d");
         <table class="table table-striped table-dark text-center">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>id</th>
+                    <th>UserID</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Role</th>
@@ -39,8 +40,10 @@ $date = date("Y-m-d");
                 <?php
                 $allUsers = mysqli_query($conn, "SELECT * FROM users ORDER BY role DESC, name ASC");
                 if (mysqli_num_rows($allUsers) > 0) {
+                    $counter = 1;
                     while ($row = mysqli_fetch_assoc($allUsers)) {
                         echo "<tr>";
+                        echo "<td>" . $counter++ . "</td>";
                         echo "<td>" . $row['id'] . "</td>";
                         echo "<td>" . htmlspecialchars($row['name']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['email']) . "</td>";
