@@ -112,5 +112,8 @@ if (isset($_POST['checkout'])) {
             }
         }
 
+     
+
+
       
     </script>
